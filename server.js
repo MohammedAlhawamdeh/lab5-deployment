@@ -6,7 +6,6 @@ const server = express();
 
 const PORT = process.env.PORT || 5200;
 
-server.use(express.static('./public'));
 
 server.get('/test' ,(request,response) => {
     response.send('Working');
@@ -21,4 +20,5 @@ server.get('/data',(request, response) => {
     response.json(cats);
 });
 
+server.use(express.static('./public'));
 server.listen( PORT, () => console.log("Listening on port", PORT));
